@@ -1,12 +1,10 @@
 using System.Collections;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HealthBar : MonoBehaviour
+public class HealthBarSmooth : MonoBehaviour
 {
     [SerializeField] private HealthCounter _counter;
-    [SerializeField] private TextMeshProUGUI _text;
     [SerializeField] private Slider _slider;
     [SerializeField] private float _speed = 0f;
 
@@ -33,16 +31,8 @@ public class HealthBar : MonoBehaviour
                 _currentMaxValue = _counter.MaxHealth;
             }
 
-            if (_slider != null)
-            {
-                _slider.value = _currentValue;
-                _slider.maxValue = _currentMaxValue;
-            }
-
-            if (_text != null)
-            {
-                _text.text = $"{(int)_currentValue}/{(int)_currentMaxValue}";
-            }
+            _slider.value = _currentValue;
+            _slider.maxValue = _currentMaxValue;
 
             yield return null;
         }

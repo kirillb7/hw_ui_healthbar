@@ -209,6 +209,7 @@ GameObject:
   - component: {fileID: 39398006}
   - component: {fileID: 39398005}
   - component: {fileID: 39398004}
+  - component: {fileID: 39398007}
   m_Layer: 5
   m_Name: HealButton
   m_TagString: Untagged
@@ -279,19 +280,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 39398005}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1392631633}
-        m_TargetAssemblyTypeName: HealthCounter, Assembly-CSharp
-        m_MethodName: Heal
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 100
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &39398005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -330,6 +319,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 39398002}
   m_CullTransparentMesh: 1
+--- !u!114 &39398007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 39398002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb7c9eb001ab64641a223238b3ff81d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _counter: {fileID: 1392631633}
+  _value: 100
 --- !u!1 &99830809
 GameObject:
   m_ObjectHideFlags: 0
@@ -434,9 +437,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _counter: {fileID: 1392631633}
-  _text: {fileID: 0}
   _slider: {fileID: 99830811}
-  _speed: 0
 --- !u!1 &212602378
 GameObject:
   m_ObjectHideFlags: 0
@@ -980,11 +981,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 636667829}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59efccee623f4de4db0bb37d752811ff, type: 3}
+  m_Script: {fileID: 11500000, guid: a26970ee73c86f34492074339f0d3842, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _counter: {fileID: 1392631633}
-  _text: {fileID: 0}
   _slider: {fileID: 636667831}
   _speed: 0.01
 --- !u!1 &819412709
@@ -1328,6 +1328,7 @@ GameObject:
   - component: {fileID: 1521598233}
   - component: {fileID: 1521598232}
   - component: {fileID: 1521598231}
+  - component: {fileID: 1521598234}
   m_Layer: 5
   m_Name: DamageButton
   m_TagString: Untagged
@@ -1398,19 +1399,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1521598232}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1392631633}
-        m_TargetAssemblyTypeName: HealthCounter, Assembly-CSharp
-        m_MethodName: Damage
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 10
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1521598232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1449,6 +1438,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1521598229}
   m_CullTransparentMesh: 1
+--- !u!114 &1521598234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1521598229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 369b85e185f00074b93fb32103409e4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _counter: {fileID: 1392631633}
+  _value: 10
 --- !u!1 &1582801987
 GameObject:
   m_ObjectHideFlags: 0
@@ -1668,13 +1671,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1726317912}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59efccee623f4de4db0bb37d752811ff, type: 3}
+  m_Script: {fileID: 11500000, guid: b7a5452cb59066c408e50742b6f61b99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _counter: {fileID: 1392631633}
   _text: {fileID: 1726317914}
-  _slider: {fileID: 0}
-  _speed: 0
 --- !u!1 &1795240880
 GameObject:
   m_ObjectHideFlags: 0
