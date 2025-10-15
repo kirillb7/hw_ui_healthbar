@@ -436,7 +436,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59efccee623f4de4db0bb37d752811ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _counter: {fileID: 1392631633}
+  Counter: {fileID: 1392631633}
   _slider: {fileID: 99830811}
 --- !u!1 &212602378
 GameObject:
@@ -984,7 +984,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a26970ee73c86f34492074339f0d3842, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _counter: {fileID: 1392631633}
+  Counter: {fileID: 1392631633}
   _slider: {fileID: 636667831}
   _speed: 0.01
 --- !u!1 &819412709
@@ -1447,11 +1447,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1521598229}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 369b85e185f00074b93fb32103409e4e, type: 3}
+  m_Script: {fileID: 11500000, guid: cb7c9eb001ab64641a223238b3ff81d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _counter: {fileID: 1392631633}
-  _value: 10
+  _value: -10
 --- !u!1 &1582801987
 GameObject:
   m_ObjectHideFlags: 0
@@ -1674,7 +1674,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7a5452cb59066c408e50742b6f61b99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _counter: {fileID: 1392631633}
+  Counter: {fileID: 1392631633}
   _text: {fileID: 1726317914}
 --- !u!1 &1795240880
 GameObject:

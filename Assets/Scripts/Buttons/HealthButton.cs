@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Button))]
-public class DamageButton : MonoBehaviour
+public class HealthButton : MonoBehaviour
 {
     [SerializeField] private HealthCounter _counter;
     [SerializeField] private int _value = 0;
@@ -26,6 +26,13 @@ public class DamageButton : MonoBehaviour
 
     private void ChangeHealth()
     {
-        _counter.Damage(_value);
+        if (_value > 0)
+        {
+            _counter.Heal(_value);
+        }
+        else
+        {
+            _counter.Damage(-_value);
+        }
     }
 }
