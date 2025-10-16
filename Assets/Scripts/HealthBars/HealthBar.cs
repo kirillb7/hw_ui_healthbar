@@ -1,20 +1,21 @@
-using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class HealthBar : MonoBehaviour
+public class HealthBar : HealthDisplay
 {
-    [SerializeField] protected HealthCounter Counter;
+    [SerializeField] protected Slider Display;
 
-    private void Start()
+    protected virtual void Start()
     {
-        StartCoroutine(UpdateValue());
+        Display.interactable = false;
+        Display.minValue = 0;
+        Display.maxValue = Counter.MaxValue;
+        Display.value = Counter.Value;
     }
 
-    protected virtual IEnumerator UpdateValue()
+    protected override void OnChanged(int newValue, int newMaxValue)
     {
-        while (enabled)
-        {
-            yield return null;
-        }
+        Display.value = newValue;
+        Display.maxValue = newMaxValue;
     }
 }

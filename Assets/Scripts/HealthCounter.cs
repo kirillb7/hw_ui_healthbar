@@ -1,26 +1,38 @@
+using System;
 using UnityEngine;
 
 public class HealthCounter : MonoBehaviour
 {
-    [SerializeField] private int _maxHealth = 100;
+    [SerializeField] private int _maxValue = 100;
 
-    private int _health;
+    private int _value;
 
-    public int Health => _health;
-    public int MaxHealth => _maxHealth;
+    public event Action<int, int> Changed;
+
+    public int Value => _value;
+    public int MaxValue => _maxValue;
 
     private void Start()
     {
-        _health = _maxHealth;
+        _value = _maxValue;
+
+        Changed?.Invoke(_value, _maxValue);
     }
 
     public void Heal(int amount)
     {
-        _health = Mathf.Clamp(_health + amount, _health, _maxHealth);
+        Change(amount);
     }
 
     public void Damage(int amount)
     {
-        _health -= amount;
+        Change(-amount);
+    }
+
+    private void Change(int amount)
+    {
+        _value = Mathf.Clamp(_value + amount, 0, _maxValue);
+
+        Changed?.Invoke(_value, _maxValue);
     }
 }

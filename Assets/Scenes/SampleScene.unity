@@ -437,7 +437,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Counter: {fileID: 1392631633}
-  _slider: {fileID: 99830811}
+  Display: {fileID: 99830811}
 --- !u!1 &212602378
 GameObject:
   m_ObjectHideFlags: 0
@@ -985,7 +985,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Counter: {fileID: 1392631633}
-  _slider: {fileID: 636667831}
+  Display: {fileID: 636667831}
   _speed: 0.01
 --- !u!1 &819412709
 GameObject:
@@ -1166,7 +1166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee910eca7a979424ca5e8fb093554a5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 100
+  _maxValue: 100
 --- !u!4 &1392631634
 Transform:
   m_ObjectHideFlags: 0
@@ -1675,7 +1675,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Counter: {fileID: 1392631633}
-  _text: {fileID: 1726317914}
+  _display: {fileID: 1726317914}
 --- !u!1 &1795240880
 GameObject:
   m_ObjectHideFlags: 0

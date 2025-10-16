@@ -1,34 +1,60 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class HealthBarSmooth : HealthBar
 {
-    [SerializeField] private Slider _slider;
     [SerializeField] private float _speed = 0f;
 
-    private float _currentValue = 0;
-    private float _currentMaxValue = 0;
+    private float _currentValue;
+    private float _currentMaxValue;
+    private int _targetValue;
+    private int _targetMaxValue;
+    private bool _isUpdating = false;
 
-    protected override IEnumerator UpdateValue()
+    protected override void Start()
     {
-        while (enabled)
+        base.Start();
+
+        _currentValue = Display.value;
+        _currentMaxValue = Display.maxValue;
+        _targetValue = Counter.Value;
+        _targetMaxValue = Counter.MaxValue;
+    }
+
+    protected override void OnChanged(int newValue, int newMaxValue)
+    {
+        _targetValue = newValue;
+        _targetMaxValue = newMaxValue;
+
+        if (_isUpdating == false)
+        {
+            StartCoroutine(UpdateValue());
+        }
+    }
+
+    private IEnumerator UpdateValue()
+    {
+        _isUpdating = true;
+
+        while (_currentValue != _targetValue || _currentMaxValue != _targetMaxValue)
         {
             if (_speed > 0)
             {
-                _currentValue = Mathf.MoveTowards(_currentValue, Counter.Health, Mathf.Abs((int)_currentValue - Counter.Health) * _speed);
-                _currentMaxValue = Mathf.MoveTowards(_currentMaxValue, Counter.MaxHealth, Mathf.Abs((int)_currentMaxValue - Counter.MaxHealth) * _speed);
+                _currentValue = Mathf.MoveTowards(_currentValue, _targetValue, Mathf.Abs((int)_currentValue - _targetValue) * _speed);
+                _currentMaxValue = Mathf.MoveTowards(_currentMaxValue, _targetMaxValue, Mathf.Abs((int)_currentMaxValue - _targetMaxValue) * _speed);
             }
             else
             {
-                _currentValue = Counter.Health;
-                _currentMaxValue = Counter.MaxHealth;
+                _currentValue = _targetValue;
+                _currentMaxValue = _targetMaxValue;
             }
 
-            _slider.value = _currentValue;
-            _slider.maxValue = _currentMaxValue;
+            Display.value = _currentValue;
+            Display.maxValue = _currentMaxValue;
 
             yield return null;
         }
+
+        _isUpdating = false;
     }
 }
